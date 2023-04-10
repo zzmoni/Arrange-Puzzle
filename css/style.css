@@ -35,14 +35,39 @@ h1 {
   font-size: 4rem;
 }
 
-
-
-.box:hover {
-  border-color: #9c896e;
+.button {
+  background-color: rgba(239, 208, 167, 0.7);
+  border: 2px solid #89847c;
+  border-radius: 10px;
+  box-shadow: #b5b5b7 4px 4px 0 0;
+  color: #363636;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 15px;
+  line-height: 25px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.drag-over {
-  border: dashed 3px black;
+.button:hover {
+  background-color: #fff;
+}
+
+.button:active {
+  box-shadow: #b5b5b7 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
 }
 /******************************************
 /* LAYOUT
