@@ -100,7 +100,7 @@ const isSolvable = (arr) => {
       if((arr[i] && arr[j]) && arr[i] > arr[j]) number_of_inv++;
     }
   }
-  return (number_of_inv % 3 == 0);
+  return (number_of_inv % 4 == 0);
 }
 
 
