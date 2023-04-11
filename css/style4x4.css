@@ -69,6 +69,15 @@ h1 {
     padding: 0 25px;
   }
 }
+
+.unselectable {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #cc0000;
+}
 /******************************************
 /* LAYOUT
 /*******************************************/
@@ -139,6 +148,12 @@ main {
   display: none;
 }
 
+h2 {
+  width: 90px;
+  height: 90px;
+  margin: 0;
+}
+
 h3 {
   text-align: center;
   font-size: 1.5rem;
@@ -148,13 +163,18 @@ h3 {
 /*******************************************/
 @media all and (max-width: 430px) {
   .container {
-    width: 220px;
-    height: 220px;
+    width: 250px;
+    height: 250px;
   }
 
   .numBox, .empty {
-    width: 51.25px;
-    height: 52.55px;
-    font-size: 1.5rem;
+    width: 58.75px;
+    height: 59.55px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    width: 47.75px;
+    height: 48.55px;
   }
 }
