@@ -170,6 +170,12 @@ h3 {
   .numBox, .empty {
     width: 58.75px;
     height: 59.55px;
+    transform-style: none;
+  }
+
+  .clickableNum:hover {
+    transform: none;
+    background-color: rgba(221, 180, 126, 0.7);
   }
 
   h2 {
