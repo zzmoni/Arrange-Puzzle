@@ -93,23 +93,23 @@ const setId = (items) => {
   }
 }
 
-const isSolvable = (arr) => {
-  let number_of_inv = 0;
-  for(let i = 0; i < arr.length; i++) {
-    for(let j = i + 1; j < arr.length; j++) {
-      if((arr[i] && arr[j]) && arr[i] > arr[j]) number_of_inv++;
-    }
-  }
-  return (number_of_inv % 4 == 0);
-}
+// const isSolvable = (arr) => {
+//   let number_of_inv = 0;
+//   for(let i = 0; i < arr.length; i++) {
+//     for(let j = i + 1; j < arr.length; j++) {
+//       if((arr[i] && arr[j]) && arr[i] > arr[j]) number_of_inv++;
+//     }
+//   }
+//   return (number_of_inv % 2 == 0);
+// }
 
 
 const fillGrid = (items, nums) => {
   let shuffled = shuffle(nums);
 
-  while(!isSolvable(shuffled)) {
-    shuffled = shuffle(nums);
-  }
+  // while(!isSolvable(shuffled)) {
+  //   shuffled = shuffle(nums);
+  // }
 
   items.forEach((item, i) => {
     item.innerText = shuffled[i];
