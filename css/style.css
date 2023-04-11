@@ -164,13 +164,13 @@ h3 {
 /*******************************************/
 @media all and (max-width: 430px) {
   .container {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
   }
 
   .numBox, .empty {
-    width: 61.55px;
-    height: 62.55px;
+    width: 78.3px;
+    height: 79.55px;
     transform-style: none;
   }
 
@@ -180,8 +180,8 @@ h3 {
   }
 
   h2 {
-    font-size: 2.5rem;
-    width: 50.55px;
-    height: 51.55px;
+    font-size: 3.3rem;
+    width: 60.55px;
+    height: 65.55px;
   }
 }
