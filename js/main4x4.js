@@ -93,6 +93,17 @@ const setId = (items) => {
   }
 }
 
+const isSolvable = (arr) => {
+  let number_of_inv = 0;
+  for(let i = 0; i < arr.length * arr.length - 1; i++){
+    for(let j = i + 1; j < arr.length * arr.length; j++) {
+      if((arr[i] && arr[j]) && arr[i] > arr[j]) number_of_inv++;
+    }
+  }
+  return (number_of_inv);
+}
+
+
 // const isSolvable = (arr) => {
 //   let number_of_inv = 0;
 //   for(let i = 0; i < arr.length; i++) {
@@ -107,9 +118,9 @@ const setId = (items) => {
 const fillGrid = (items, nums) => {
   let shuffled = shuffle(nums);
 
-  // while(!isSolvable(shuffled)) {
-  //   shuffled = shuffle(nums);
-  // }
+  while(!isSolvable(shuffled)) {
+    shuffled = shuffle(nums);
+  }
 
   items.forEach((item, i) => {
     item.innerText = shuffled[i];
@@ -134,6 +145,14 @@ const isCorrect = (solution, content) => {
 }
 
 
+const showModal = () => {
+  document.getElementById('message').innerText = "You Won!";
+  document.getElementById('modalContainer').classList.remove("hideModal");
+}
+
+const hideModalBtn = () => {
+  document.getElementById('modalContainer').classList.add("hideModal");
+}
 
 
 let turns = 0;
@@ -186,10 +205,10 @@ function clickThis() {
       console.log("new state");
 
 
+      const unsolvable = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "15", "14", ""];
 
-
-      if(isCorrect(nums, state.content)) {
-        alert("You won!");
+      if(isCorrect(nums, state.content) || isCorrect(unsolvable, state.content)) {
+        showModal();
       }
       return;
     }

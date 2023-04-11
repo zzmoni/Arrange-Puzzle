@@ -135,6 +135,14 @@ const isCorrect = (solution, content) => {
 }
 
 
+const showModal = () => {
+  document.getElementById('message').innerText = "You Won!";
+  document.getElementById('modalContainer').classList.remove("hideModal");
+}
+
+const hideModalBtn = () => {
+  document.getElementById('modalContainer').classList.add("hideModal");
+}
 
 
 let turns = 0;
@@ -190,7 +198,7 @@ function clickThis() {
 
 
       if(isCorrect(nums, state.content)) {
-        alert("You won!");
+        showModal();
       }
       return;
     }
