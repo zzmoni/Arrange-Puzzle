@@ -78,7 +78,6 @@ h1 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #cc0000;
 }
 
 
@@ -88,7 +87,7 @@ h1 {
   height: 300px;
   max-height: 100%;
 
-  background: rgba(130, 176, 232);
+  background: rgb(207, 211, 215);
   transform:
     perspective(80em)
     rotateX(15deg);
@@ -98,7 +97,7 @@ h1 {
   border-radius: 10px;
   border: 1px solid;
   border-color:
-    rgb(0, 0, 0)
+    rgb(213, 220, 226)
     rgb(213, 220, 226)
     rgb(184, 194, 204);
 
@@ -218,13 +217,13 @@ h3 {
 /*******************************************/
 @media all and (max-width: 430px) {
   .container {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
   }
 
   .numBox, .empty {
-    width: 78.3px;
-    height: 79.55px;
+    width: 95px;
+    height: 96px;
     transform-style: none;
   }
 
@@ -234,8 +233,8 @@ h3 {
   }
 
   h2 {
-    font-size: 3.3rem;
-    width: 60.55px;
-    height: 65.55px;
+    font-size: 4.2rem;
+    width: 84.55px;
+    height: 85.55px;
   }
 }
