@@ -145,8 +145,9 @@ const isCorrect = (solution, content) => {
 }
 
 
+
+// modal
 const showModal = () => {
-  document.getElementById('message').innerText = "You Won!";
   document.getElementById('modalContainer').classList.remove("hideModal");
 }
 
@@ -155,17 +156,47 @@ const hideModalBtn = () => {
 }
 
 
+
+
 let turns = 0;
 
+
+
+// new state every move
+const newState = () => {
+  setId(document.querySelectorAll('.numValue'));
+  state.content = getState(document.querySelectorAll('.numValue'));
+  state.dimension = getDimension(state);
+
+  removeEmpty(document.querySelectorAll('.numValue'));
+
+  setEmpty(document.querySelectorAll('.numValue')) ;
+  setClickable(document.querySelectorAll('.numValue'));
+  console.log("new state");
+
+
+  // 4x4 unsolvable shuffle
+  const unsolvable = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "15", "14", ""];
+
+  if(isCorrect(nums, state.content) || isCorrect(unsolvable, state.content)) {
+    showModal();
+  }
+  return;
+}
+
+
+
+// main function
 function clickThis() {
   const emptyBox = document.getElementsByClassName("empty")[0];
   const clickableBox = document.getElementsByClassName("clickableNum");
+  const clickableNums = document.getElementsByClassName("clickableValue");
 
-  const allValues = document.getElementsByClassName("clickableValue");
-  for (let i = 0; i < allValues.length; i++) {
-    const boxValues = allValues[i];
+  for (let i = 0; i < clickableNums.length; i++) {
+    const boxValues = clickableNums[i];
 
     boxValues.onclick = function(e) {
+      // if player clicks a non clickable box
       if (!e.currentTarget.classList.contains('clickableValue')) {
         console.log("not clickable");
         return;
@@ -175,7 +206,7 @@ function clickThis() {
       const newParent =  el.parentNode.class === "empty" ? clickableBox : emptyBox;
 
       const emptyChild = document.getElementsByClassName("emptyValue")[0];
-      const newEmpParent =  document.getElementsByClassName("clickableNum")[i];
+      const newEmpParent =  clickableBox[i];
 
       el.parentNode.removeChild(el);
       newParent.appendChild(el);
@@ -191,26 +222,7 @@ function clickThis() {
       document.getElementById('turns').innerText = `Turns: ${turns}`
 
 
-
-
-      // new state
-      setId(document.querySelectorAll('.numValue'));
-      state.content = getState(document.querySelectorAll('.numValue'));
-      state.dimension = getDimension(state);
-
-      removeEmpty(document.querySelectorAll('.numValue'));
-
-      setEmpty(document.querySelectorAll('.numValue')) ;
-      setClickable(document.querySelectorAll('.numValue'));
-      console.log("new state");
-
-
-      const unsolvable = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "15", "14", ""];
-
-      if(isCorrect(nums, state.content) || isCorrect(unsolvable, state.content)) {
-        showModal();
-      }
-      return;
+      newState();
     }
   }
 }
