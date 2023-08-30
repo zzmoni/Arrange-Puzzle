@@ -4,7 +4,7 @@ Shuffle the numbers into the right order (3x3 and 4x4).
 
 This game was created using HTML, CSS and JavaScript.
 
-<a href="https://zzmoni.github.io/Number-Puzzle/" target="_blank">Demo</a>
+<a href="https://zzmoni.github.io/Arrange-Puzzle/">Demo</a>
 
 ### Screenshots:
 ![image](https://github.com/zzmoni/Number-Puzzle/assets/124896029/51a0202e-d686-42cc-aa01-f5e5e73c56a1)
