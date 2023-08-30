@@ -1,6 +1,6 @@
 # Arrange-Puzzle
 
-Shuffle the numbers into the right order (3x3 and 4x4).
+Arrange the numbers into the right order (3x3 and 4x4).
 
 This game was created using HTML, CSS and JavaScript.
 
