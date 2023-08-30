@@ -1,4 +1,4 @@
-# Number-Puzzle
+# Arrange-Puzzle
 
 Shuffle the numbers into the right order (3x3 and 4x4).
 
